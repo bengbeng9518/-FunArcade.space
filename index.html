@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Prospector - Space Mining Adventure Game | Play Online | FunArcade</title>
+    <meta name="description" content="Play Astro Prospector, an exciting space mining adventure game. Explore the cosmos, mine valuable resources, and upgrade your ship in this thrilling arcade experience.">
+    <link rel="canonical" href="https://funarcade.space" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apple-inspired color palette */
+        :root {
+            --apple-blue: #007AFF;
+            --apple-gray: #8E8E93;
+            --apple-black: #1D1D1F;
+            --apple-white: #F5F5F7;
+        }
+        
+        .game-container {
+            aspect-ratio: 16/9;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        @media (max-width: 768px) {
+            .game-container {
+                aspect-ratio: 4/3;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[--apple-white]">
+    <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="text-2xl font-bold text-[--apple-black]">FunArcade</div>
+        </nav>
+    </header>
+
+    <main class="pt-24 pb-12 px-4">
+        <div class="container mx-auto">
+            <!-- Hero Section -->
+            <section class="text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-bold text-[--apple-black] mb-6">
+                    Astro Prospector: Space Mining Adventure
+                </h1>
+                <p class="text-xl text-[--apple-gray] mb-8">
+                    Embark on an epic journey through space as a resourceful miner in this thrilling arcade experience
+                </p>
+            </section>
+
+            <!-- Game Section -->
+            <section class="mb-16">
+                <div class="game-container mx-auto bg-black rounded-xl overflow-hidden shadow-2xl">
+                    <iframe 
+                        src="https://html-classic.itch.zone/html/13142449/index.html"
+                        class="w-full h-full border-0"
+                        allow="fullscreen"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- Game Features -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Key Features</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Space Exploration</h3>
+                        <p class="text-[--apple-gray]">Navigate through mysterious asteroid fields and discover valuable resources in the depths of space.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Mining Operations</h3>
+                        <p class="text-[--apple-gray]">Extract precious minerals and manage your cargo capacity while avoiding hazardous obstacles.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Ship Upgrades</h3>
+                        <p class="text-[--apple-gray]">Enhance your mining vessel with powerful upgrades to improve efficiency and survival capabilities.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Play -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">How to Play</h2>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <ul class="space-y-4 text-[--apple-gray]">
+                        <li>🚀 Use arrow keys or WASD to navigate your spaceship</li>
+                        <li>⛏️ Press SPACE to activate your mining beam</li>
+                        <li>💎 Collect valuable minerals to earn points</li>
+                        <li>🛡️ Watch your fuel and health levels</li>
+                        <li>⚡ Upgrade your ship between missions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- About the Game -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">About Astro Prospector</h2>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <p class="text-[--apple-gray] mb-4">
+                        Astro Prospector is an engaging space mining adventure that combines resource management with arcade-style gameplay. As a lone prospector in the vast cosmos, you'll navigate treacherous asteroid fields, mine valuable resources, and upgrade your ship to become the most successful space miner in the galaxy.
+                    </p>
+                    <p class="text-[--apple-gray]">
+                        With intuitive controls and progressive difficulty, Astro Prospector offers an exciting experience for both casual and hardcore gamers. Every session presents new challenges and opportunities in the endless expanse of space.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-[--apple-black] text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 FunArcade.space. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
