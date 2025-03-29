@@ -1,0 +1,32 @@
+:root {
+    --apple-blue: #007AFF;
+    --apple-gray: #8E8E93;
+    --apple-black: #1D1D1F;
+    --apple-white: #F5F5F7;
+}
+
+.game-container {
+    aspect-ratio: 16/9;
+    width: 100%;
+    max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        aspect-ratio: 4/3;
+    }
+}
+
+/* 评分星星动画 */
+.star-rating button {
+    transition: transform 0.2s;
+}
+
+.star-rating button:hover {
+    transform: scale(1.2);
+}
+
+/* 评论区样式 */
+.comment-input:focus {
+    box-shadow: 0 0 0 2px var(--apple-blue);
+} 
