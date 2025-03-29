@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Prospector - Space Mining Adventure Game | FunArcade</title>
+    <meta name="description" content="Play Astro Prospector, an exciting space mining adventure game. Explore the cosmos, mine valuable resources, and upgrade your ship in this thrilling arcade experience.">
+    <link rel="canonical" href="https://funarcade.space/games/astro-prospector" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="bg-[--apple-white]">
+    <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-2xl font-bold text-[--apple-black]">FunArcade</a>
+                
+                <!-- 主导航 -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="/categories/action" class="text-[--apple-black] hover:text-[--apple-blue]">Action</a>
+                    <a href="/categories/multiplayer" class="text-[--apple-black] hover:text-[--apple-blue]">Multiplayer</a>
+                    <a href="/categories/strategy" class="text-[--apple-black] hover:text-[--apple-blue]">Strategy</a>
+                    <a href="/categories/puzzle" class="text-[--apple-black] hover:text-[--apple-blue]">Puzzle</a>
+                </div>
+
+                <!-- 用户菜单 -->
+                <div class="flex items-center space-x-4">
+                    <button class="bg-[--apple-blue] text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24 pb-12 px-4">
+        <div class="container mx-auto">
+            <!-- 游戏标题和评分 -->
+            <section class="text-center mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-[--apple-black] mb-6">
+                    Astro Prospector: Space Mining Adventure
+                </h1>
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="flex items-center">
+                        <div class="flex text-yellow-400">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="ml-2 text-xl font-bold">4.8</span>
+                        </div>
+                        <span class="text-[--apple-gray] ml-2">(234 ratings)</span>
+                    </div>
+                    <button class="bg-[--apple-blue] text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                        Rate Game
+                    </button>
+                </div>
+            </section>
+
+            <!-- 游戏区域 -->
+            <section class="mb-16">
+                <div class="game-container mx-auto bg-black rounded-xl overflow-hidden shadow-2xl">
+                    <iframe 
+                        src="https://html-classic.itch.zone/html/13142449/index.html"
+                        class="w-full h-full border-0"
+                        allow="fullscreen"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- 游戏信息和截图 -->
+            <section class="mb-16 grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2">
+                    <!-- 游戏特性 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8">
+                        <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Key Features</h2>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-4">Space Exploration</h3>
+                                <p class="text-[--apple-gray]">Navigate through mysterious asteroid fields and discover valuable resources.</p>
+                            </div>
+                            <!-- 其他特性... -->
+                        </div>
+                    </div>
+
+                    <!-- 游戏截图 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8">
+                        <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Screenshots</h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="/assets/images/games/astro-prospector/screenshots/1.jpg" alt="Gameplay screenshot" class="rounded-lg">
+                            <img src="/assets/images/games/astro-prospector/screenshots/2.jpg" alt="Gameplay screenshot" class="rounded-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 侧边栏 -->
+                <div>
+                    <!-- 游戏信息 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6">
+                        <h2 class="font-bold mb-4">Game Info</h2>
+                        <ul class="space-y-2 text-[--apple-gray]">
+                            <li>Category: Space, Adventure</li>
+                            <li>Release Date: 2024</li>
+                            <li>Developer: Space Games Studio</li>
+                            <li>Platform: Browser</li>
+                        </ul>
+                    </div>
+
+                    <!-- 相关游戏 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="font-bold mb-4">Similar Games</h2>
+                        <div class="space-y-4">
+                            <!-- 相关游戏卡片 -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 评论系统 -->
+            <section class="mb-16">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Comments</h2>
+                    
+                    <!-- 评论输入框 -->
+                    <div class="mb-8">
+                        <textarea 
+                            class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-[--apple-blue]"
+                            placeholder="Write your comment..."
+                            rows="4"
+                        ></textarea>
+                        <button class="mt-4 bg-[--apple-blue] text-white px-6 py-2 rounded-lg hover:bg-blue-600">
+                            Post Comment
+                        </button>
+                    </div>
+
+                    <!-- 评论列表 -->
+                    <div class="space-y-6">
+                        <div class="border-b border-gray-100 pb-6">
+                            <div class="flex items-center mb-2">
+                                <img src="/assets/images/avatars/user1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+                                <div class="ml-4">
+                                    <h4 class="font-bold">John Doe</h4>
+                                    <p class="text-sm text-[--apple-gray]">2 days ago</p>
+                                </div>
+                            </div>
+                            <p class="text-[--apple-gray]">Great game! Love the mining mechanics and ship upgrades.</p>
+                        </div>
+                        <!-- 更多评论... -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-[--apple-black] text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 FunArcade.space. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html> 

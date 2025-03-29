@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Planner - Railway Puzzle Game | FunArcade</title>
+    <meta name="description" content="Play Train Planner, an open-ended puzzle game where you create safe and efficient rail networks. Design your railway system and help Miku deliver her leeks in this charming strategy game.">
+    <meta name="keywords" content="Train Planner, puzzle game, railway game, strategy game, Miku, train simulation">
+    <link rel="canonical" href="https://funarcade.space/games/train-planner" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --apple-blue: #007AFF;
+            --apple-gray: #8E8E93;
+            --apple-black: #1D1D1F;
+            --apple-white: #F5F5F7;
+        }
+
+        /* 游戏容器样式优化 */
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            background: var(--apple-black);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .game-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .game-container {
+                aspect-ratio: 4/3;
+            }
+        }
+
+        /* 全屏模式样式 */
+        .game-container:fullscreen {
+            width: 100vw;
+            height: 100vh;
+            aspect-ratio: unset;
+        }
+    </style>
+</head>
+<body class="bg-[--apple-white]">
+    <!-- 保持原有header -->
+
+    <main class="pt-24 pb-12 px-4">
+        <div class="container mx-auto">
+            <!-- 游戏标题和评分 -->
+            <section class="text-center mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-[--apple-black] mb-6">
+                    Train Planner: Railway Puzzle Adventure
+                </h1>
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="flex items-center">
+                        <div class="flex text-yellow-400">
+                            <span class="text-xl font-bold">4.9</span>
+                            <span class="text-[--apple-gray] ml-2">(23 ratings)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 游戏区域 -->
+            <section class="mb-16">
+                <div class="relative max-w-[1200px] mx-auto">
+                    <!-- 控制按钮 -->
+                    <div class="absolute top-4 right-4 z-10 flex gap-2">
+                        <button onclick="toggleFullscreen()" 
+                                class="bg-white/90 backdrop-blur-md text-[--apple-black] px-4 py-2 rounded-lg shadow-lg hover:bg-white flex items-center gap-2 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                            </svg>
+                            <span>Fullscreen</span>
+                        </button>
+                    </div>
+
+                    <!-- 游戏容器 -->
+                    <div class="game-container" id="gameContainer">
+                        <iframe 
+                            src="https://html-classic.itch.zone/html/13166169/index.html"
+                            allow="fullscreen"
+                            loading="lazy"
+                            title="Train Planner Full Game">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- 游戏控制说明 -->
+                <div class="mt-6 bg-white p-4 rounded-lg shadow-md max-w-[1200px] mx-auto">
+                    <h3 class="font-semibold mb-2">Controls:</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-[--apple-gray]">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-gray-100 px-2 py-1 rounded">Left Click</span>
+                            <span>Place Track</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-gray-100 px-2 py-1 rounded">Right Click</span>
+                            <span>Delete Track</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-gray-100 px-2 py-1 rounded">R</span>
+                            <span>Rotate Track</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-gray-100 px-2 py-1 rounded">T</span>
+                            <span>Toggle UI</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 游戏介绍 -->
+            <section class="mb-16">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">About Train Planner</h2>
+                    <div class="prose max-w-none text-[--apple-gray]">
+                        <p class="mb-4">Train Planner is an open-ended puzzle game where you have to create a safe, efficient and pretty rail network to let Miku deliver her leeks. It's important work!</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4 text-[--apple-black]">Features:</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Create complex railway networks</li>
+                            <li>Manage train traffic with signals</li>
+                            <li>Beautiful pixel art graphics</li>
+                            <li>Relaxing gameplay experience</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 游戏信息 -->
+            <section class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold mb-4">Game Info</h3>
+                    <ul class="space-y-2 text-[--apple-gray]">
+                        <li>Genre: Puzzle, Strategy</li>
+                        <li>Platform: Browser</li>
+                        <li>Developer: Toffee</li>
+                        <li>Release Date: 2024</li>
+                    </ul>
+                </div>
+                <!-- 其他信息卡片 -->
+            </section>
+        </div>
+    </main>
+
+    <!-- 添加全屏控制脚本 -->
+    <script>
+    function toggleFullscreen() {
+        const gameContainer = document.getElementById('gameContainer');
+        
+        if (!document.fullscreenElement) {
+            if (gameContainer.requestFullscreen) {
+                gameContainer.requestFullscreen();
+            } else if (gameContainer.webkitRequestFullscreen) {
+                gameContainer.webkitRequestFullscreen();
+            } else if (gameContainer.msRequestFullscreen) {
+                gameContainer.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }
+
+    // 监听全屏变化
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+    function handleFullscreenChange() {
+        const fullscreenBtn = document.querySelector('.fullscreen-btn');
+        if (document.fullscreenElement) {
+            fullscreenBtn.innerHTML = 'Exit Fullscreen';
+        } else {
+            fullscreenBtn.innerHTML = 'Fullscreen';
+        }
+    }
+    </script>
+
+    <!-- 保持原有footer -->
+</body>
+</html> 
