@@ -3,114 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astro Prospector - Space Mining Adventure Game | Play Online | FunArcade</title>
-    <meta name="description" content="Play Astro Prospector, an exciting space mining adventure game. Explore the cosmos, mine valuable resources, and upgrade your ship in this thrilling arcade experience.">
+    <title>FunArcade - Play Free Online Games | Best Browser Games Platform</title>
+    <meta name="description" content="Play free online games at FunArcade! We offer the best collection of browser games including action, multiplayer, strategy, and more. New games added daily!">
     <link rel="canonical" href="https://funarcade.space" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Apple-inspired color palette */
         :root {
             --apple-blue: #007AFF;
             --apple-gray: #8E8E93;
             --apple-black: #1D1D1F;
             --apple-white: #F5F5F7;
         }
-        
-        .game-container {
+
+        .featured-game {
             aspect-ratio: 16/9;
-            width: 100%;
-            max-width: 1200px;
+            max-height: 480px;
+        }
+
+        .game-card {
+            transition: all 0.3s ease;
         }
         
-        @media (max-width: 768px) {
-            .game-container {
-                aspect-ratio: 4/3;
-            }
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body class="bg-[--apple-white]">
     <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
         <nav class="container mx-auto px-4 py-4">
-            <div class="text-2xl font-bold text-[--apple-black]">FunArcade</div>
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-2xl font-bold text-[--apple-black]">FunArcade</a>
+                
+                <!-- 主导航 -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="/categories/action" class="text-[--apple-black] hover:text-[--apple-blue]">Action</a>
+                    <a href="/categories/multiplayer" class="text-[--apple-black] hover:text-[--apple-blue]">Multiplayer</a>
+                    <a href="/categories/strategy" class="text-[--apple-black] hover:text-[--apple-blue]">Strategy</a>
+                    <a href="/categories/puzzle" class="text-[--apple-black] hover:text-[--apple-blue]">Puzzle</a>
+                </div>
+
+                <!-- 搜索框 -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <input type="search" 
+                           placeholder="Search games..." 
+                           class="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-[--apple-blue]">
+                    <button class="bg-[--apple-blue] text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                        Sign In
+                    </button>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main class="pt-24 pb-12 px-4">
         <div class="container mx-auto">
-            <!-- Hero Section -->
-            <section class="text-center mb-16">
-                <h1 class="text-4xl md:text-6xl font-bold text-[--apple-black] mb-6">
-                    Astro Prospector: Space Mining Adventure
-                </h1>
-                <p class="text-xl text-[--apple-gray] mb-8">
-                    Embark on an epic journey through space as a resourceful miner in this thrilling arcade experience
-                </p>
-            </section>
-
-            <!-- Game Section -->
+            <!-- 特色游戏展示区域 -->
             <section class="mb-16">
-                <div class="game-container mx-auto bg-black rounded-xl overflow-hidden shadow-2xl">
-                    <iframe 
-                        src="https://html-classic.itch.zone/html/13142449/index.html"
-                        class="w-full h-full border-0"
-                        allow="fullscreen"
-                        loading="lazy">
-                    </iframe>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Astro Prospector -->
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 z-10">
+                            <a href="/games/astro-prospector.html" 
+                               class="bg-white/90 backdrop-blur-md text-[--apple-black] px-4 py-2 rounded-lg shadow-lg hover:bg-white flex items-center gap-2 transition-all">
+                                <span>View Full Game</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="featured-game bg-black rounded-xl overflow-hidden shadow-2xl">
+                            <iframe 
+                                src="https://html-classic.itch.zone/html/13142449/index.html"
+                                class="w-full h-full border-0"
+                                allow="fullscreen"
+                                loading="lazy"
+                                title="Astro Prospector Game">
+                            </iframe>
+                        </div>
+                        <div class="mt-4">
+                            <h2 class="text-xl font-bold text-[--apple-black]">Astro Prospector</h2>
+                            <p class="text-[--apple-gray]">Space Mining Adventure</p>
+                        </div>
+                    </div>
+
+                    <!-- Train Planner -->
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 z-10">
+                            <a href="/games/train-planner.html" 
+                               class="bg-white/90 backdrop-blur-md text-[--apple-black] px-4 py-2 rounded-lg shadow-lg hover:bg-white flex items-center gap-2 transition-all">
+                                <span>View Full Game</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="featured-game bg-black rounded-xl overflow-hidden shadow-2xl">
+                            <iframe 
+                                src="https://html-classic.itch.zone/html/13166169/index.html"
+                                class="w-full h-full border-0"
+                                allow="fullscreen"
+                                loading="lazy"
+                                title="Train Planner Game">
+                            </iframe>
+                        </div>
+                        <div class="mt-4">
+                            <h2 class="text-xl font-bold text-[--apple-black]">Train Planner</h2>
+                            <p class="text-[--apple-gray]">Railway Puzzle Adventure</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Game Features -->
+            <!-- 热门分类 -->
             <section class="mb-16">
-                <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Key Features</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h3 class="text-xl font-semibold mb-4">Space Exploration</h3>
-                        <p class="text-[--apple-gray]">Navigate through mysterious asteroid fields and discover valuable resources in the depths of space.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h3 class="text-xl font-semibold mb-4">Mining Operations</h3>
-                        <p class="text-[--apple-gray]">Extract precious minerals and manage your cargo capacity while avoiding hazardous obstacles.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h3 class="text-xl font-semibold mb-4">Ship Upgrades</h3>
-                        <p class="text-[--apple-gray]">Enhance your mining vessel with powerful upgrades to improve efficiency and survival capabilities.</p>
-                    </div>
+                <h2 class="text-2xl font-bold text-[--apple-black] mb-6">Popular Categories</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <a href="/categories/action" class="game-card bg-white p-6 rounded-xl text-center">
+                        <span class="text-3xl mb-2 block">🎮</span>
+                        <span class="font-medium">Action</span>
+                    </a>
+                    <a href="/categories/strategy" class="game-card bg-white p-6 rounded-xl text-center">
+                        <span class="text-3xl mb-2 block">🎯</span>
+                        <span class="font-medium">Strategy</span>
+                    </a>
+                    <a href="/categories/puzzle" class="game-card bg-white p-6 rounded-xl text-center">
+                        <span class="text-3xl mb-2 block">🧩</span>
+                        <span class="font-medium">Puzzle</span>
+                    </a>
+                    <a href="/categories/rpg" class="game-card bg-white p-6 rounded-xl text-center">
+                        <span class="text-3xl mb-2 block">⚔️</span>
+                        <span class="font-medium">RPG</span>
+                    </a>
                 </div>
             </section>
 
-            <!-- How to Play -->
+            <!-- 推荐游戏 -->
             <section class="mb-16">
-                <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">How to Play</h2>
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <ul class="space-y-4 text-[--apple-gray]">
-                        <li>🚀 Use arrow keys or WASD to navigate your spaceship</li>
-                        <li>⛏️ Press SPACE to activate your mining beam</li>
-                        <li>💎 Collect valuable minerals to earn points</li>
-                        <li>🛡️ Watch your fuel and health levels</li>
-                        <li>⚡ Upgrade your ship between missions</li>
-                    </ul>
+                <h2 class="text-2xl font-bold text-[--apple-black] mb-6">Recommended Games</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="/games/astro-prospector" class="game-card bg-white rounded-xl overflow-hidden">
+                        <div class="aspect-video bg-gray-100"></div>
+                        <div class="p-4">
+                            <h3 class="font-semibold mb-1">Astro Prospector</h3>
+                            <p class="text-sm text-[--apple-gray]">Space Mining Adventure</p>
+                        </div>
+                    </a>
+                    <!-- 更多游戏卡片 -->
                 </div>
             </section>
 
-            <!-- About the Game -->
+            <!-- 新游戏 -->
             <section class="mb-16">
-                <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">About Astro Prospector</h2>
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <p class="text-[--apple-gray] mb-4">
-                        Astro Prospector is an engaging space mining adventure that combines resource management with arcade-style gameplay. As a lone prospector in the vast cosmos, you'll navigate treacherous asteroid fields, mine valuable resources, and upgrade your ship to become the most successful space miner in the galaxy.
-                    </p>
-                    <p class="text-[--apple-gray]">
-                        With intuitive controls and progressive difficulty, Astro Prospector offers an exciting experience for both casual and hardcore gamers. Every session presents new challenges and opportunities in the endless expanse of space.
-                    </p>
+                <h2 class="text-2xl font-bold text-[--apple-black] mb-6">New Games</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- 游戏卡片结构同上 -->
                 </div>
             </section>
         </div>
     </main>
 
     <footer class="bg-[--apple-black] text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>© 2024 FunArcade.space. All rights reserved.</p>
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/categories/action" class="hover:text-[--apple-blue]">Action Games</a></li>
+                        <li><a href="/categories/strategy" class="hover:text-[--apple-blue]">Strategy Games</a></li>
+                        <li><a href="/categories/puzzle" class="hover:text-[--apple-blue]">Puzzle Games</a></li>
+                        <li><a href="/categories/rpg" class="hover:text-[--apple-blue]">RPG Games</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about" class="hover:text-[--apple-blue]">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-[--apple-blue]">Contact</a></li>
+                        <li><a href="/privacy" class="hover:text-[--apple-blue]">Privacy Policy</a></li>
+                        <li><a href="/terms" class="hover:text-[--apple-blue]">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center border-t border-gray-700 pt-8">
+                <p>© 2024 FunArcade.space. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
