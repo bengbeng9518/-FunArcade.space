@@ -8,29 +8,95 @@
     <link rel="canonical" href="https://funarcade.space/games/polytrack" />
 </head>
 <body>
-    <!-- 页面结构相同，更新以下内容： -->
-    <h1>PolyTrack</h1>
-    <div class="game-container">
-        <iframe 
-            src="https://html-classic.itch.zone/html/11880944/index.html?v=1732313523"
-            allow="fullscreen"
-            loading="lazy"
-            title="PolyTrack Game">
-        </iframe>
-    </div>
-    
-    <!-- 游戏介绍 -->
-    <div class="prose">
-        <p>PolyTrack is a minimalist track building game that lets you create and optimize racing circuits. With its simple yet powerful tools, you can design the perfect racing experience.</p>
-        
-        <h3>Features:</h3>
-        <ul>
-            <li>Intuitive track building tools</li>
-            <li>Clean, minimalist design</li>
-            <li>Multiple track types and surfaces</li>
-            <li>Test your tracks in real-time</li>
-            <li>Share your creations with others</li>
-        </ul>
-    </div>
+    <style>
+        /* 添加或更新以下样式 */
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            background: var(--apple-black);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .game-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* 移动设备适配 */
+        @media (max-width: 768px) {
+            .game-container {
+                aspect-ratio: 4/3;
+            }
+        }
+
+        /* 全屏模式 */
+        .game-container:fullscreen {
+            width: 100vw;
+            height: 100vh;
+            aspect-ratio: unset;
+        }
+    </style>
+
+    <main class="pt-24 pb-12 px-4">
+        <div class="container mx-auto">
+            <!-- 游戏标题和评分 -->
+            <section class="text-center mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-[--apple-black] mb-6">
+                    PolyTrack
+                </h1>
+                <!-- ... 其他标题内容 ... -->
+            </section>
+
+            <!-- 游戏区域 -->
+            <section class="mb-16">
+                <div class="relative max-w-[1200px] mx-auto">
+                    <!-- 控制按钮 -->
+                    <div class="absolute top-4 right-4 z-10 flex gap-2">
+                        <button onclick="toggleFullscreen()" 
+                                class="bg-white/90 backdrop-blur-md text-[--apple-black] px-4 py-2 rounded-lg shadow-lg hover:bg-white flex items-center gap-2 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                            </svg>
+                            <span>Fullscreen</span>
+                        </button>
+                    </div>
+
+                    <!-- 游戏容器 -->
+                    <div class="game-container" id="gameContainer">
+                        <iframe 
+                            src="https://html-classic.itch.zone/html/11880944/index.html?v=1732313523"
+                            allow="fullscreen"
+                            loading="lazy"
+                            title="PolyTrack Game">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 游戏介绍 -->
+            <div class="prose">
+                <p>PolyTrack is a minimalist track building game that lets you create and optimize racing circuits. With its simple yet powerful tools, you can design the perfect racing experience.</p>
+                
+                <h3>Features:</h3>
+                <ul>
+                    <li>Intuitive track building tools</li>
+                    <li>Clean, minimalist design</li>
+                    <li>Multiple track types and surfaces</li>
+                    <li>Test your tracks in real-time</li>
+                    <li>Share your creations with others</li>
+                </ul>
+            </div>
+        </div>
+    </main>
 </body>
 </html> 

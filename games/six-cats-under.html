@@ -8,16 +8,41 @@
     <link rel="canonical" href="https://funarcade.space/games/six-cats-under" />
 </head>
 <body>
-    <!-- 页面结构相同，更新以下内容： -->
-    <h1>Six Cats Under</h1>
-    <div class="game-container">
-        <iframe 
-            src="https://html-classic.itch.zone/html/2267583/index.html?v=1591301667"
-            allow="fullscreen"
-            loading="lazy"
-            title="Six Cats Under Game">
-        </iframe>
-    </div>
+    <style>
+        /* 与 polytrack.html 相同的样式 */
+    </style>
+
+    <main class="pt-24 pb-12 px-4">
+        <div class="container mx-auto">
+            <section class="text-center mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-[--apple-black] mb-6">
+                    Six Cats Under
+                </h1>
+                <!-- ... 其他标题内容 ... -->
+            </section>
+
+            <section class="mb-16">
+                <div class="relative max-w-[1200px] mx-auto">
+                    <!-- 控制按钮 -->
+                    <div class="absolute top-4 right-4 z-10 flex gap-2">
+                        <!-- 全屏按钮 -->
+                    </div>
+
+                    <!-- 游戏容器 -->
+                    <div class="game-container" id="gameContainer">
+                        <iframe 
+                            src="https://html-classic.itch.zone/html/2267583/index.html?v=1591301667"
+                            allow="fullscreen"
+                            loading="lazy"
+                            title="Six Cats Under Game">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ... 其他内容 ... -->
+        </div>
+    </main>
     
     <!-- 游戏介绍 -->
     <div class="prose">
