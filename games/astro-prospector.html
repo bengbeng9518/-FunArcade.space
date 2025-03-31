@@ -3,11 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-61P4DL0R9B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-61P4DL0R9B');
+    </script>
     <title>Astro Prospector - Space Mining Adventure Game | FunArcade</title>
     <meta name="description" content="Play Astro Prospector, an exciting space mining adventure game. Explore the cosmos, mine valuable resources, and upgrade your ship in this thrilling arcade experience.">
     <link rel="canonical" href="https://funarcade.space/games/astro-prospector" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        :root {
+            --apple-blue: #007AFF;
+            --apple-gray: #8E8E93;
+            --apple-black: #1D1D1F;
+            --apple-white: #F5F5F7;
+        }
+
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            background: var(--apple-black);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .game-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .game-container {
+                aspect-ratio: 4/3;
+            }
+        }
+
+        .game-container:fullscreen {
+            width: 100vw;
+            height: 100vh;
+            aspect-ratio: unset;
+        }
+    </style>
 </head>
 <body class="bg-[--apple-white]">
     <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
@@ -50,103 +99,89 @@
                         </div>
                         <span class="text-[--apple-gray] ml-2">(234 ratings)</span>
                     </div>
-                    <button class="bg-[--apple-blue] text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-                        Rate Game
-                    </button>
                 </div>
             </section>
 
             <!-- 游戏区域 -->
             <section class="mb-16">
-                <div class="game-container mx-auto bg-black rounded-xl overflow-hidden shadow-2xl">
-                    <iframe 
-                        src="https://html-classic.itch.zone/html/13142449/index.html"
-                        class="w-full h-full border-0"
-                        allow="fullscreen"
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </section>
-
-            <!-- 游戏信息和截图 -->
-            <section class="mb-16 grid md:grid-cols-3 gap-8">
-                <div class="md:col-span-2">
-                    <!-- 游戏特性 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md mb-8">
-                        <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Key Features</h2>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h3 class="text-xl font-semibold mb-4">Space Exploration</h3>
-                                <p class="text-[--apple-gray]">Navigate through mysterious asteroid fields and discover valuable resources.</p>
-                            </div>
-                            <!-- 其他特性... -->
-                        </div>
-                    </div>
-
-                    <!-- 游戏截图 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md mb-8">
-                        <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Screenshots</h2>
-                        <div class="grid grid-cols-2 gap-4">
-                            <img src="/assets/images/games/astro-prospector/screenshots/1.jpg" alt="Gameplay screenshot" class="rounded-lg">
-                            <img src="/assets/images/games/astro-prospector/screenshots/2.jpg" alt="Gameplay screenshot" class="rounded-lg">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 侧边栏 -->
-                <div>
-                    <!-- 游戏信息 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md mb-6">
-                        <h2 class="font-bold mb-4">Game Info</h2>
-                        <ul class="space-y-2 text-[--apple-gray]">
-                            <li>Category: Space, Adventure</li>
-                            <li>Release Date: 2024</li>
-                            <li>Developer: Space Games Studio</li>
-                            <li>Platform: Browser</li>
-                        </ul>
-                    </div>
-
-                    <!-- 相关游戏 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h2 class="font-bold mb-4">Similar Games</h2>
-                        <div class="space-y-4">
-                            <!-- 相关游戏卡片 -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 评论系统 -->
-            <section class="mb-16">
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Comments</h2>
-                    
-                    <!-- 评论输入框 -->
-                    <div class="mb-8">
-                        <textarea 
-                            class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-[--apple-blue]"
-                            placeholder="Write your comment..."
-                            rows="4"
-                        ></textarea>
-                        <button class="mt-4 bg-[--apple-blue] text-white px-6 py-2 rounded-lg hover:bg-blue-600">
-                            Post Comment
+                <div class="relative max-w-[1200px] mx-auto">
+                    <!-- 控制按钮 -->
+                    <div class="absolute top-4 right-4 z-10 flex gap-2">
+                        <button onclick="toggleFullscreen()" 
+                                class="bg-white/90 backdrop-blur-md text-[--apple-black] px-4 py-2 rounded-lg shadow-lg hover:bg-white flex items-center gap-2 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                            </svg>
+                            <span>Fullscreen</span>
                         </button>
                     </div>
 
-                    <!-- 评论列表 -->
-                    <div class="space-y-6">
-                        <div class="border-b border-gray-100 pb-6">
-                            <div class="flex items-center mb-2">
-                                <img src="/assets/images/avatars/user1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
-                                <div class="ml-4">
-                                    <h4 class="font-bold">John Doe</h4>
-                                    <p class="text-sm text-[--apple-gray]">2 days ago</p>
-                                </div>
-                            </div>
-                            <p class="text-[--apple-gray]">Great game! Love the mining mechanics and ship upgrades.</p>
-                        </div>
-                        <!-- 更多评论... -->
+                    <!-- 游戏容器 -->
+                    <div class="game-container" id="gameContainer">
+                        <iframe 
+                            src="https://htmlclassic.itch.zone/html/13142449/index.html"
+                            allow="fullscreen"
+                            loading="lazy"
+                            title="Astro Prospector Game">
+                        </iframe>
                     </div>
+                </div>
+
+                <!-- 游戏控制说明 -->
+                <div class="mt-6 bg-white p-6 rounded-lg shadow-md max-w-[1200px] mx-auto">
+                    <h3 class="font-semibold mb-4">Controls:</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-[--apple-gray]">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-gray-100 px-2 py-1 rounded">WASD</span>
+                            <span>Move Ship</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-gray-100 px-2 py-1 rounded">SPACE</span>
+                            <span>Mine</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-gray-100 px-2 py-1 rounded">E</span>
+                            <span>Upgrade</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-gray-100 px-2 py-1 rounded">ESC</span>
+                            <span>Menu</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 游戏特性 -->
+            <section class="mb-16">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Key Features</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Space Exploration</h3>
+                            <p class="text-[--apple-gray]">Navigate through mysterious asteroid fields and discover valuable resources in the depths of space.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Mining Operations</h3>
+                            <p class="text-[--apple-gray]">Extract precious minerals and manage your cargo capacity while avoiding hazardous obstacles.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Ship Upgrades</h3>
+                            <p class="text-[--apple-gray]">Enhance your mining vessel with powerful upgrades to improve efficiency and survival capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 游戏信息 -->
+            <section class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold mb-4">Game Info</h3>
+                    <ul class="space-y-2 text-[--apple-gray]">
+                        <li>Category: Space, Adventure</li>
+                        <li>Release Date: 2024</li>
+                        <li>Platform: Browser</li>
+                        <li>Rating: 4.8/5</li>
+                    </ul>
                 </div>
             </section>
         </div>
@@ -158,6 +193,43 @@
         </div>
     </footer>
 
-    <script src="/assets/js/main.js"></script>
+    <script>
+    function toggleFullscreen() {
+        const gameContainer = document.getElementById('gameContainer');
+        
+        if (!document.fullscreenElement) {
+            if (gameContainer.requestFullscreen) {
+                gameContainer.requestFullscreen();
+            } else if (gameContainer.webkitRequestFullscreen) {
+                gameContainer.webkitRequestFullscreen();
+            } else if (gameContainer.msRequestFullscreen) {
+                gameContainer.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }
+
+    // 监听全屏变化
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+    function handleFullscreenChange() {
+        const fullscreenBtn = document.querySelector('.fullscreen-btn');
+        if (document.fullscreenElement) {
+            fullscreenBtn.innerHTML = 'Exit Fullscreen';
+        } else {
+            fullscreenBtn.innerHTML = 'Fullscreen';
+        }
+    }
+    </script>
 </body>
 </html> 

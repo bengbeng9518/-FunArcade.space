@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-61P4DL0R9B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-61P4DL0R9B');
+    </script>
     <title>Train Planner - Railway Puzzle Game | FunArcade</title>
     <meta name="description" content="Play Train Planner, an open-ended puzzle game where you create safe and efficient rail networks. Design your railway system and help Miku deliver her leeks in this charming strategy game.">
     <meta name="keywords" content="Train Planner, puzzle game, railway game, strategy game, Miku, train simulation">
@@ -16,7 +25,6 @@
             --apple-white: #F5F5F7;
         }
 
-        /* 游戏容器样式优化 */
         .game-container {
             position: relative;
             width: 100%;
@@ -38,14 +46,12 @@
             border: none;
         }
 
-        /* 响应式调整 */
         @media (max-width: 768px) {
             .game-container {
                 aspect-ratio: 4/3;
             }
         }
 
-        /* 全屏模式样式 */
         .game-container:fullscreen {
             width: 100vw;
             height: 100vh;
@@ -54,7 +60,28 @@
     </style>
 </head>
 <body class="bg-[--apple-white]">
-    <!-- 保持原有header -->
+    <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-2xl font-bold text-[--apple-black]">FunArcade</a>
+                
+                <!-- 主导航 -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="/categories/action" class="text-[--apple-black] hover:text-[--apple-blue]">Action</a>
+                    <a href="/categories/multiplayer" class="text-[--apple-black] hover:text-[--apple-blue]">Multiplayer</a>
+                    <a href="/categories/strategy" class="text-[--apple-black] hover:text-[--apple-blue]">Strategy</a>
+                    <a href="/categories/puzzle" class="text-[--apple-black] hover:text-[--apple-blue]">Puzzle</a>
+                </div>
+
+                <!-- 用户菜单 -->
+                <div class="flex items-center space-x-4">
+                    <button class="bg-[--apple-blue] text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <main class="pt-24 pb-12 px-4">
         <div class="container mx-auto">
@@ -93,30 +120,49 @@
                             src="https://html-classic.itch.zone/html/13166169/index.html"
                             allow="fullscreen"
                             loading="lazy"
-                            title="Train Planner Full Game">
+                            title="Train Planner Game">
                         </iframe>
                     </div>
                 </div>
 
                 <!-- 游戏控制说明 -->
-                <div class="mt-6 bg-white p-4 rounded-lg shadow-md max-w-[1200px] mx-auto">
-                    <h3 class="font-semibold mb-2">Controls:</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-[--apple-gray]">
-                        <div class="flex items-center gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded">Left Click</span>
-                            <span>Place Track</span>
+                <div class="mt-6 bg-white p-6 rounded-lg shadow-md max-w-[1200px] mx-auto">
+                    <h3 class="font-semibold mb-4">Game Controls</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2">Track Building</h4>
+                            <ul class="space-y-2 text-sm text-[--apple-gray]">
+                                <li class="flex items-center gap-2">
+                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">Left Click</span>
+                                    <span>Place Track</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">Right Click</span>
+                                    <span>Delete Track</span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded">Right Click</span>
-                            <span>Delete Track</span>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2">Controls</h4>
+                            <ul class="space-y-2 text-sm text-[--apple-gray]">
+                                <li class="flex items-center gap-2">
+                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">R</span>
+                                    <span>Rotate Track</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">1-4</span>
+                                    <span>Switch Mode</span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded">R</span>
-                            <span>Rotate Track</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded">T</span>
-                            <span>Toggle UI</span>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2">Interface</h4>
+                            <ul class="space-y-2 text-sm text-[--apple-gray]">
+                                <li class="flex items-center gap-2">
+                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">T</span>
+                                    <span>Toggle UI</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -148,15 +194,19 @@
                         <li>Genre: Puzzle, Strategy</li>
                         <li>Platform: Browser</li>
                         <li>Developer: Toffee</li>
-                        <li>Release Date: 2024</li>
+                        <li>Rating: 4.9/5</li>
                     </ul>
                 </div>
-                <!-- 其他信息卡片 -->
             </section>
         </div>
     </main>
 
-    <!-- 添加全屏控制脚本 -->
+    <footer class="bg-[--apple-black] text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 FunArcade.space. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
     function toggleFullscreen() {
         const gameContainer = document.getElementById('gameContainer');
@@ -195,7 +245,5 @@
         }
     }
     </script>
-
-    <!-- 保持原有footer -->
 </body>
 </html> 

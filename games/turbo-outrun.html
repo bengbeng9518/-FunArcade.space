@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turbo OutRun Reimagined - Retro Racing Game | FunArcade</title>
-    <meta name="description" content="Experience the ultimate retro racing game with Turbo OutRun Reimagined. Choose from multiple vehicles, race through challenging tracks, and enjoy classic arcade racing with modern features.">
-    <meta name="keywords" content="Turbo OutRun, racing game, retro gaming, arcade racing, pixel art, racing simulation">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-61P4DL0R9B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-61P4DL0R9B');
+    </script>
+    <title>Turbo OutRun - Classic Racing Game | FunArcade</title>
+    <meta name="description" content="Experience the thrill of Turbo OutRun, a classic racing game where you drive through beautiful landscapes at breakneck speeds. Race against time and compete for the highest score!">
+    <meta name="keywords" content="Turbo OutRun, racing game, arcade game, retro gaming, classic games">
     <link rel="canonical" href="https://funarcade.space/games/turbo-outrun" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -16,7 +25,6 @@
             --apple-white: #F5F5F7;
         }
 
-        /* 游戏容器样式优化 */
         .game-container {
             position: relative;
             width: 100%;
@@ -38,14 +46,12 @@
             border: none;
         }
 
-        /* 响应式调整 */
         @media (max-width: 768px) {
             .game-container {
                 aspect-ratio: 4/3;
             }
         }
 
-        /* 全屏模式样式 */
         .game-container:fullscreen {
             width: 100vw;
             height: 100vh;
@@ -54,20 +60,41 @@
     </style>
 </head>
 <body class="bg-[--apple-white]">
-    <!-- 保持原有header -->
+    <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-2xl font-bold text-[--apple-black]">FunArcade</a>
+                
+                <!-- 主导航 -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="/categories/action" class="text-[--apple-black] hover:text-[--apple-blue]">Action</a>
+                    <a href="/categories/multiplayer" class="text-[--apple-black] hover:text-[--apple-blue]">Multiplayer</a>
+                    <a href="/categories/strategy" class="text-[--apple-black] hover:text-[--apple-blue]">Strategy</a>
+                    <a href="/categories/puzzle" class="text-[--apple-black] hover:text-[--apple-blue]">Puzzle</a>
+                </div>
+
+                <!-- 用户菜单 -->
+                <div class="flex items-center space-x-4">
+                    <button class="bg-[--apple-blue] text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <main class="pt-24 pb-12 px-4">
         <div class="container mx-auto">
             <!-- 游戏标题和评分 -->
             <section class="text-center mb-8">
                 <h1 class="text-4xl md:text-6xl font-bold text-[--apple-black] mb-6">
-                    Turbo OutRun Reimagined
+                    Turbo OutRun
                 </h1>
                 <div class="flex items-center justify-center gap-4 mb-4">
                     <div class="flex items-center">
                         <div class="flex text-yellow-400">
                             <span class="text-xl font-bold">4.8</span>
-                            <span class="text-[--apple-gray] ml-2">(110 ratings)</span>
+                            <span class="text-[--apple-gray] ml-2">(31 ratings)</span>
                         </div>
                     </div>
                 </div>
@@ -90,10 +117,10 @@
                     <!-- 游戏容器 -->
                     <div class="game-container" id="gameContainer">
                         <iframe 
-                            src="https://html-classic.itch.zone/html/9797870/index.html"
+                            src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fturbo-outrun.jsdos?anonymous=1"
                             allow="fullscreen"
                             loading="lazy"
-                            title="Turbo OutRun Reimagined">
+                            title="Turbo OutRun Game">
                         </iframe>
                     </div>
                 </div>
@@ -103,49 +130,28 @@
                     <h3 class="font-semibold mb-4">Game Controls</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                         <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-medium mb-2">Driving</h4>
+                            <h4 class="font-medium mb-2">Driving Controls</h4>
                             <ul class="space-y-2 text-sm text-[--apple-gray]">
                                 <li class="flex items-center gap-2">
-                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">↑</span>
+                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">Arrow Keys</span>
+                                    <span>Steering</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">Space</span>
                                     <span>Accelerate</span>
                                 </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">↓</span>
-                                    <span>Brake</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">←→</span>
-                                    <span>Steer</span>
-                                </li>
                             </ul>
                         </div>
                         <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-medium mb-2">Gears</h4>
+                            <h4 class="font-medium mb-2">Game Options</h4>
                             <ul class="space-y-2 text-sm text-[--apple-gray]">
                                 <li class="flex items-center gap-2">
-                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">Q</span>
-                                    <span>Shift Up</span>
+                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">ESC</span>
+                                    <span>Pause Game</span>
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">W</span>
-                                    <span>Shift Down</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">SPACE</span>
-                                    <span>Turbo</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-medium mb-2">Other</h4>
-                            <ul class="space-y-2 text-sm text-[--apple-gray]">
-                                <li class="flex items-center gap-2">
-                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">B</span>
-                                    <span>Next Song</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">P</span>
-                                    <span>Pause</span>
+                                    <span class="bg-gray-200 px-2 py-1 rounded text-xs">Enter</span>
+                                    <span>Start/Select</span>
                                 </li>
                             </ul>
                         </div>
@@ -153,24 +159,21 @@
                 </div>
             </section>
 
-            <!-- 游戏特性 -->
+            <!-- 游戏介绍 -->
             <section class="mb-16">
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">Game Features</h2>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-xl font-bold mb-4">Choose Your Ride</h3>
-                            <p class="text-[--apple-gray]">Start with 4 iconic vehicles and unlock 3 additional machines, including a powerful motorcycle!</p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-4">Multiple Game Modes</h3>
-                            <ul class="list-disc pl-6 text-[--apple-gray] space-y-2">
-                                <li>Original: 10-race championship</li>
-                                <li>Turbo OutRun: 5-race time attack</li>
-                                <li>OutRun: Classic arcade mode</li>
-                                <li>Cruisin': Relaxed free driving</li>
-                            </ul>
-                        </div>
+                    <h2 class="text-3xl font-bold mb-8 text-[--apple-black]">About Turbo OutRun</h2>
+                    <div class="prose max-w-none text-[--apple-gray]">
+                        <p class="mb-4">Turbo OutRun is a classic racing game that puts you behind the wheel of a high-performance sports car. Race through diverse landscapes and challenging weather conditions while competing against the clock and other racers.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4 text-[--apple-black]">Features:</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Classic arcade racing gameplay</li>
+                            <li>Multiple challenging stages</li>
+                            <li>Dynamic weather conditions</li>
+                            <li>High-speed action and thrills</li>
+                            <li>Iconic retro graphics and sound</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -181,17 +184,21 @@
                     <h3 class="font-bold mb-4">Game Info</h3>
                     <ul class="space-y-2 text-[--apple-gray]">
                         <li>Genre: Racing, Arcade</li>
-                        <li>Platform: Browser</li>
-                        <li>Developer: Sk1ds</li>
+                        <li>Platform: Browser (DOS Emulator)</li>
+                        <li>Release Year: 1989</li>
+                        <li>Developer: SEGA</li>
                         <li>Rating: 4.8/5</li>
                     </ul>
                 </div>
-                <!-- 其他信息卡片 -->
             </section>
         </div>
     </main>
 
-    <!-- 保持原有footer -->
+    <footer class="bg-[--apple-black] text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 FunArcade.space. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
     function toggleFullscreen() {
